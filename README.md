@@ -4,7 +4,7 @@
 
 This project is a next-generation Kiosk system designed to help students and visitors navigate large campuses. It features a **real-time 3D Avatar**, **Voice Interaction**, and **Dynamic Map Navigation**.
 
-![Project Screenshot](frontend/public/images/rgpvcampus.png) 
+![Project Screenshot](frontend/public/images/AI_KIOSK.png) 
 *(Note: Replace the image path above with a screenshot of your actual UI)*
 
 ---

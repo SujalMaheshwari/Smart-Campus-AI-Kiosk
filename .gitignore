@@ -1,0 +1,22 @@
+# Dependencies (Yeh upload nahi karni chahiye)
+node_modules/
+dist/
+build/
+venv/
+__pycache__/
+.env
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Audio generated files (Optional - agar purani recordings nahi chahiye)
+backend/audio/*.mp3
+backend/audio/*.wav
+# Lekin welcome message rakhna hai toh ye mat likhna, ya fir manually add kar dena.
+
+backend/ffmpeg.exe
+backend/rhubarb/rhubarb.exe
+*.exe
+venv/
+node_modules/

@@ -1,0 +1,434 @@
+.app-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* --- BACKGROUND --- */
+.app-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/rgpvcampus.png'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(8px); 
+  transform: scale(1.1); 
+  z-index: -2;
+}
+
+.app-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); 
+  z-index: -1;
+}
+
+/* --- BRANDING --- */
+.rgpv-branding {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  z-index: 10;
+  pointer-events: none;
+  user-select: none;
+}
+
+.rgpv-logo {
+  width: 70px;
+  height: auto;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+}
+
+.rgpv-title h1 {
+  margin: 0;
+  font-size: 24px;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  letter-spacing: 1px;
+}
+
+.rgpv-title p {
+  margin: 0;
+  font-size: 14px;
+  color: #00d4ff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+  font-weight: 500;
+}
+
+/* --- SUGGESTIONS & CHAT BUBBLE --- */
+.user-bubble {
+  position: absolute;
+  top: 130px; /* Thoda aur neeche taaki logo se door rahe */
+  left: 40px;
+  max-width: 300px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 15px 20px;
+  border-radius: 20px 20px 20px 0px; 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  animation: slideInLeft 0.5s ease;
+  border-left: 5px solid #007bff;
+}
+
+/* Suggestions Box - Ab ye hamesha side mein rahega */
+.suggestions-container {
+  position: absolute;
+  top: 35%; /* User bubble ke neeche */
+  left: 40px; /* Left align with branding */
+  z-index: 10;
+  width: 250px;
+}
+
+.suggestion-title {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  padding-left: 5px;
+  font-family: 'Arial', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.chips-grid {
+  display: flex;
+  flex-direction: column; /* Stack vertically */
+  gap: 12px;
+}
+
+.chip-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+  text-align: left;
+  width: 100%; /* Full width of container */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.chip-btn:hover {
+  background: rgba(0, 212, 255, 0.2);
+  border-color: #00d4ff;
+  transform: translateX(8px); /* Hover par thoda right shift */
+  box-shadow: 0 4px 12px rgba(0, 212, 255, 0.3);
+}
+
+.user-label {
+  font-size: 10px;
+  color: #555;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.user-text {
+  margin: 0;
+  color: #000;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+/* --- NAV CARD --- */
+.nav-card {
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  width: 280px;
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+  border: 1px solid #00ff88;
+  font-family: 'Segoe UI', sans-serif;
+  z-index: 20;
+  animation: slideInRight 0.5s ease-out;
+}
+
+.nav-header {
+  margin: 0 0 15px 0;
+  border-bottom: 1px solid #555;
+  padding-bottom: 10px;
+  color: #00ff88;
+  font-size: 18px;
+}
+
+.nav-list {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.nav-item {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+/* --- CAPTION BOX --- */
+.caption-box {
+  position: absolute;
+  bottom: 110px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 700px;
+  max-height: 150px;
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.95);
+  color: #000000;
+  border: 2px solid #fff; 
+  padding: 20px 30px;
+  border-radius: 20px;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.6;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  z-index: 10;
+  animation: popUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cursor {
+  color: #007bff;
+  font-weight: bold;
+  animation: blink 1s infinite;
+  margin-left: 2px;
+}
+
+/* --- CONTROLS --- */
+.controls-bar {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 12px 25px;
+  border-radius: 50px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  z-index: 20;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.chat-input {
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: url('https://cdn-icons-png.flaticon.com/16/106/106807.png');
+  caret-color: #007bff;
+  font-weight: 500;
+  font-size: 16px;
+  width: 250px;
+  color: #333;
+  font-family: inherit;
+}
+
+.separator {
+  width: 1px;
+  height: 25px;
+  background: #ccc;
+}
+
+.mic-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+  background: linear-gradient(135deg, #007bff, #00d4ff);
+}
+
+.mic-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.5);
+}
+
+.mic-button.listening {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  box-shadow: 0 0 20px rgba(255, 68, 68, 0.6);
+  transform: scale(1.1);
+  animation: pulse 1.5s infinite;
+}
+
+/* ... (Purana CSS waisa hi rakhna) ... */
+
+.mic-button.listening {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  box-shadow: 0 0 20px rgba(255, 68, 68, 0.6);
+  transform: scale(1.1);
+  animation: pulse 1.5s infinite;
+}
+
+/* --- 🆕 LOADING INDICATOR STYLE --- */
+.loading-indicator {
+  position: absolute;
+  top: 45%; /* Center ke paas */
+  left: 40px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  z-index: 10;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: fadeIn 0.5s ease;
+}
+
+.loading-indicator .dot {
+  font-size: 1.2rem;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- ANIMATIONS --- */
+@keyframes popUp {
+  from { opacity: 0; transform: translateX(-50%) scale(0.9); }
+  to { opacity: 1; transform: translateX(-50%) scale(1); }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 68, 68, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(255, 68, 68, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 68, 68, 0); }
+}
+/* --- MAP OVERLAY (FIXED POSITION) --- */
+.map-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4); /* Thoda transparent background */
+  z-index: 1000; /* Avatar ke upar */
+  display: flex;
+  justify-content: flex-end; /* 👈 RIGHT SIDE SHIFT KIYA */
+  align-items: center;
+  padding-right: 50px; /* Right se thoda gap */
+  animation: slideIn 0.5s ease-out;
+}
+
+/* --- MAP CARD DESIGN --- */
+.map-card-container {
+  background: white;
+  width: 400px; /* Width fix kar di */
+  height: 85vh; /* Height badha di taaki QR code na kate */
+  border-radius: 20px;
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Scroll na aaye */
+  position: relative;
+}
+
+/* --- MAP SECTION --- */
+.map-section {
+  flex: 2; /* Map ko zyada jagah */
+  height: 50%;
+  width: 100%;
+}
+
+/* --- INFO SECTION (QR + STEPS) --- */
+.info-section {
+  flex: 2; /* Info ko bhi barabar jagah */
+  background: #f8f9fa;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto; /* Agar content zyada ho toh scroll ho */
+}
+
+/* --- QR CODE BOX --- */
+.qr-box {
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  margin-bottom: 10px;
+  display: flex; /* Center karne ke liye */
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- CLOSE BUTTON (❌) --- */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #ff4444;
+  color: white;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 1100;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.close-btn:hover {
+  transform: scale(1.1);
+  background: #cc0000;
+}
+
+/* --- ANIMATION --- */
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}

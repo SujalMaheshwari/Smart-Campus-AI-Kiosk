@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "soundFile": "C:\\Users\\acer\\Desktop\\ai-kiosk\\backend\\audio\\welcome.wav",
+    "duration": 9.02
+  },
+  "mouthCues": [
+    { "start": 0.00, "end": 0.24, "value": "X" },
+    { "start": 0.24, "end": 0.39, "value": "B" },
+    { "start": 0.39, "end": 0.53, "value": "E" },
+    { "start": 0.53, "end": 0.67, "value": "F" },
+    { "start": 0.67, "end": 1.68, "value": "X" },
+    { "start": 1.68, "end": 1.81, "value": "C" },
+    { "start": 1.81, "end": 1.88, "value": "B" },
+    { "start": 1.88, "end": 2.02, "value": "C" },
+    { "start": 2.02, "end": 2.23, "value": "F" },
+    { "start": 2.23, "end": 2.31, "value": "A" },
+    { "start": 2.31, "end": 2.42, "value": "D" },
+    { "start": 2.42, "end": 2.49, "value": "B" },
+    { "start": 2.49, "end": 2.91, "value": "C" },
+    { "start": 2.91, "end": 3.75, "value": "B" },
+    { "start": 3.75, "end": 4.75, "value": "X" },
+    { "start": 4.75, "end": 4.97, "value": "C" },
+    { "start": 4.97, "end": 5.11, "value": "B" },
+    { "start": 5.11, "end": 5.19, "value": "A" },
+    { "start": 5.19, "end": 5.24, "value": "B" },
+    { "start": 5.24, "end": 5.28, "value": "C" },
+    { "start": 5.28, "end": 5.36, "value": "A" },
+    { "start": 5.36, "end": 5.50, "value": "C" },
+    { "start": 5.50, "end": 5.71, "value": "B" },
+    { "start": 5.71, "end": 5.85, "value": "E" },
+    { "start": 5.85, "end": 5.94, "value": "A" },
+    { "start": 5.94, "end": 6.38, "value": "B" },
+    { "start": 6.38, "end": 6.61, "value": "E" },
+    { "start": 6.61, "end": 6.82, "value": "F" },
+    { "start": 6.82, "end": 7.25, "value": "B" },
+    { "start": 7.25, "end": 7.30, "value": "E" },
+    { "start": 7.30, "end": 7.62, "value": "B" },
+    { "start": 7.62, "end": 7.83, "value": "F" },
+    { "start": 7.83, "end": 8.18, "value": "B" },
+    { "start": 8.18, "end": 9.02, "value": "X" }
+  ]
+}
